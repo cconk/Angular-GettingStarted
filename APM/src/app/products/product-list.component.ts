@@ -10,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ProductListComponent /*implements OnInit*/ {
-  pageTitle: string = 'Product List';
+  pageTitle = 'Product List';
+  imageWidth = 50;
+  imageMargin = 2;
+  showImage = false;
+  listFilter = 'cart';
   products: any[] =
   [
     {
@@ -64,9 +68,7 @@ export class ProductListComponent /*implements OnInit*/ {
       "imageUrl": "assets/images/xbox-controller.png"
     }
   ];
-  // imageWidth = 50;
-  // imageMargin = 2;
-  // showImage = false;
+
   // errorMessage = '';
 
   // _listFilter = '';
@@ -93,9 +95,9 @@ export class ProductListComponent /*implements OnInit*/ {
   //     product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
   // }
 
-  // toggleImage(): void {
-  //   this.showImage = !this.showImage;
-  // }
+  toggleImage(): void {
+    this.showImage = !this.showImage;
+  }
 
   // ngOnInit(): void {
   //   this.productService.getProducts().subscribe({
